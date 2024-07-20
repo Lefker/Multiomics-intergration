@@ -144,17 +144,17 @@ LUADall <- rbind(LUADgene,LUADMethProbes,LUADmiRNA_Seq)
 
 #export<-LUADgene
 # Creates a tab file
-#setwd("H:/Ergasia")
+#setwd("file_path")
 #write.table(export, "LUADgene.tab", sep = "\t",col.names = NA, quote = FALSE)
 
 #export<-LUADMethProbes
 # Creates a tab file
-#setwd("H:/Ergasia")
+#setwd("file_path")
 #write.table(export, "LUADMethProbes.tab", sep = "\t",col.names = NA, quote = FALSE)
 
 #export<-LUADmiRNA_Seq
 # Creates a tab file
-#setwd("H:/Ergasia")
+#setwd("file_path")
 #write.table(export, "LUADmiRNA_Seq.tab", sep = "\t",col.names = NA, quote = FALSE)
 
 # Keep the information from clinical and subtypes of the common patients
