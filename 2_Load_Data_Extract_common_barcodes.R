@@ -6,7 +6,7 @@ library(caret)
 
 
 # Loads the data if has been saved first in a file.
-LUADDnaMethexp <- load(file="H:/Ergasia/LUADDnaMethexp3.rda")
+LUADDnaMethexp <- load(file="file_path_of_meth_data.rda")
 LUADDnaMethexp <- data 
 remove(data)
 
@@ -15,14 +15,14 @@ LUADMeth <- LUADDnaMethexp[rowSums(is.na(assay(LUADDnaMethexp))) == 0,]
 LUADMethProbes <- assay(LUADMeth)
 
 # Loads the data if has been saved first in a file.
-load(file="H:/Ergasia/LUADgenexp.rda")
+load(file="file_path_of_gene_expr_data.rda")
 LUADgenexp<- data 
 remove(data)
 
 LUADgene <- as.data.frame(assay(LUADgenexp))
 
 # Loads the data if has been saved first in a file.
-load(file="H:/Ergasia/LUADmiRNA_Seq.rda")
+load(file="file_path_of_miRNA_seq_data.rda")
 LUADmiRNA_Seq <- data
 remove(data)
 rownames(LUADmiRNA_Seq) <- LUADmiRNA_Seq$miRNA_ID
