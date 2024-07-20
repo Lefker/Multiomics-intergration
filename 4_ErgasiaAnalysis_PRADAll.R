@@ -1,21 +1,21 @@
 # Loads the tabs of the expression values and the patient's ids
-PRADgene <- read.table("H:/Ergasia/PRADgene.tab", row.names=1)
+PRADgene <- read.table("file_path_PRADgene.tab", row.names=1)
 PRADgene <- t(PRADgene)
 PRADgene <- PRADgene[!apply(PRADgene, 1, function(x) all(x == 0)), ]
-PRADgeneids <- read.delim("H:/Ergasia/PRADgeneids.tab", row.names=1)
+PRADgeneids <- read.delim("file_path_PRADgeneids.tab", row.names=1)
 
 # Loads the tabs of the beta values and the patient's ids
-PRADMethProbes <- read.table("H:/Ergasia/PRADMethProbes.tab", row.names=1)
+PRADMethProbes <- read.table("file_path_PRADMethProbes.tab", row.names=1)
 names(PRADMethProbes) <- gsub(x = names(PRADMethProbes), pattern = "\\.", replacement = "-")
-PRADMethids <- read.delim("H:/Ergasia/PRADMethids.tab", row.names=1)
+PRADMethids <- read.delim("file_path_PRADMethids.tab", row.names=1)
 
 # Loads the tabs of the miRNA values and the patient's ids
-PRADmiRNA_Seq <- read.delim("H:/Ergasia/PRADmiRNA_Seq.tab", row.names=1)
+PRADmiRNA_Seq <- read.delim("file_path_PRADmiRNA_Seq.tab", row.names=1)
 names(PRADmiRNA_Seq) <- gsub(x = names(PRADmiRNA_Seq), pattern = "\\.", replacement = "-")
 PRADmiRNA_Seq <- PRADmiRNA_Seq[!apply(PRADmiRNA_Seq, 1, function(x) all(x == 0)), ]
 PRADrow <- rownames(PRADmiRNA_Seq)
 PRADcol <- colnames(PRADmiRNA_Seq)
-PRADmiRNAids <- read.delim("H:/Ergasia/PRADmiRNAids.tab", row.names=1)
+PRADmiRNAids <- read.delim("file_path_PRADmiRNAids.tab", row.names=1)
 PRADmiRNA_Seq <- matrix(unlist(PRADmiRNA_Seq), ncol = nrow(PRADmiRNAids))
 rownames(PRADmiRNA_Seq) <- PRADrow
 colnames(PRADmiRNA_Seq) <- PRADcol
@@ -31,9 +31,9 @@ Norm_data_miRna <- norm_fun(PRADmiRNA_Seq)
 PRADall <- rbind(Norm_data_Rseq,Norm_data_Meth,Norm_data_miRna)
 
 # Saves the integrated dataset
-#setwd("H:/Ergasia")
+#setwd("file_path")
 #write.table(PRADall, "PRADall.tab", sep = "\t", quote = FALSE)
-#PRADall <- read.table("H:/Ergasia/PRADall.tab", row.names=1)
+#PRADall <- read.table("file_path_PRADall.tab", row.names=1)
 
 #rm(PRADcol,PRADrow,PRADgene,PRADMethProbes,PRADmiRNA_Seq,PRADgeneids,
 #   PRADMethids,PRADall, PRADmiRNA_Seq_norm, PRADMethProbes_norm,PRADgene_norm)
@@ -92,5 +92,5 @@ Comb_data_all <- Comb_data_all[order(row.names(Comb_data_all),decreasing = FALSE
 Comb_data_all_Cond <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb_data_all))
 
 # Creates a tab file
-setwd("H:/Ergasia")
+setwd("file_path")
 write.table(Comb_data_all_Cond, "significantPRADALL.tab", sep = "\t", quote = FALSE)
