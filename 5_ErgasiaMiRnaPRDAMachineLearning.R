@@ -4,7 +4,7 @@ library(rpart)
 library(rpart.plot)
 library(smotefamily)
 # Acquires the data
-FinalDataCond_miRNA <- read.delim("H:/Ergasia/significantmiRNA.tab", row.names=1)
+FinalDataCond_miRNA <- read.delim("file_path_significantmiRNA.tab", row.names=1)
 
 
 # Creates the training and testing set
