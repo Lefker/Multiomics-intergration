@@ -1,9 +1,9 @@
 # Loads the tabs of the expression values and the patient's ids
-PRADMethProbes <- read.table("H:/Ergasia/PRADMethProbes.tab", row.names=1)
+PRADMethProbes <- read.table("file_path_PRADMethProbes.tab", row.names=1)
 names(PRADMethProbes) <- gsub(x = names(PRADMethProbes), pattern = "\\.", replacement = "-")
 PRADMethProbes <- PRADMethProbes[!apply(PRADMethProbes, 1, function(x) all(x == 0)), ]
 
-PRADMethids <- read.delim("H:/Ergasia/PRADMethids.tab", row.names=1)
+PRADMethids <- read.delim("file_path_PRADMethids.tab", row.names=1)
 
 # Normalize the expression matrix
 Norm_data_Meth <- norm_fun(PRADMethProbes)
@@ -50,17 +50,15 @@ foldchange <- FoldChange_fun(normal,cancer,Norm_data_Meth)
 Comb_data_Meth <- cbind(padj, foldchange, as.data.frame(Norm_data_Meth))
 Comb_data_Meth <- Comb_data_Meth[order(Comb_data_Meth$FoldChange,decreasing = TRUE),]
 
-# Orders of the table based on the adjusted p-value 
+# Orders the table based on the adjusted p-value 
 # and keeps the features with adjusted p_value < 0.05
 Comb_data_Meth <- subset(Comb_data_Meth, p_adjusted < 0.05 & abs(FoldChange) >=1.5, select = c(-1,-2))
 
-#Comb_data_Meth <- Comb_data_Meth[,c(-1,-2)]
-#Comb_data_Meth <- as.matrix(Comb_data_Meth)
 Comb_data_Meth <- t(Comb_data_Meth)
 Comb_data_Meth <- Comb_data_Meth[order(row.names(Comb_data_Meth),decreasing = FALSE),]
 Comb_data_Meth_Cond <- cbind("Condition"=PRADMethids$condition,as.data.frame(Comb_data_Meth))
 
 
 # Creates a tab file
-setwd("H:/Ergasia")
+setwd("file_path")
 write.table(Comb_data_Meth_Cond, "significantMethPRAD.tab", sep = "\t",col.names = NA, quote = FALSE)
