@@ -1,10 +1,10 @@
 # Loads the tabs of the expression values and the patient's ids
-PRADmiRNA_Seq <- read.delim("H:/Ergasia/PRADmiRNA_Seq.tab", row.names=1)
+PRADmiRNA_Seq <- read.delim("file_path_PRADmiRNA_Seq.tab", row.names=1)
 names(PRADmiRNA_Seq) <- gsub(x = names(PRADmiRNA_Seq), pattern = "\\.", replacement = "-")
 PRADmiRNA_Seq <- PRADmiRNA_Seq[!apply(PRADmiRNA_Seq, 1, function(x) all(x == 0)), ]
 PRADrow <- rownames(PRADmiRNA_Seq)
 PRADcol <- colnames(PRADmiRNA_Seq)
-PRADmiRNAids <- read.delim("H:/Ergasia/PRADmiRNAids.tab", row.names=1)
+PRADmiRNAids <- read.delim("file_path_PRADmiRNAids.tab", row.names=1)
 PRADmiRNA_Seq <- matrix(unlist(PRADmiRNA_Seq), ncol = nrow(PRADmiRNAids))
 rownames(PRADmiRNA_Seq) <- PRADrow
 colnames(PRADmiRNA_Seq) <- PRADcol
@@ -69,5 +69,5 @@ Comb_data_miRna_Cond <- cbind("Condition"=PRADmiRNAids$condition,as.data.frame(C
 
 
 # Creates a tab file
-setwd("H:/Ergasia")
+setwd("file_path")
 write.table(Comb_data_miRna_Cond, "significantmiRNA.tab", sep = "\t", quote = FALSE)
