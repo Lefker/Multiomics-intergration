@@ -61,4 +61,4 @@ FinalDataCond_Rseq <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb
 
 # Creates a tab file
 setwd("file_path")
-write.table(FinalDataCond_Rseq, "ssignificantRSeq.tab", sep = "\t",col.names = NA, quote = FALSE)
+write.table(FinalDataCond_Rseq, "significantRSeq.tab", sep = "\t",col.names = NA, quote = FALSE)
