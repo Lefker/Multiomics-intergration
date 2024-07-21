@@ -4,7 +4,7 @@ library(rpart)
 library(rpart.plot)
 library(smotefamily)
 # Acquires the data
-FinalDataCond_miRNA <- read.delim("K:\\METAPTYXIAKO\\Diplomatikh\\Ergasia\\significantmiRNA.tab", row.names=1)
+FinalDataCond_miRNA <- read.delim("file_path\\significantmiRNA.tab", row.names=1)
 
 
 # Prepares the model's parametres
