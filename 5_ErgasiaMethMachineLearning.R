@@ -4,7 +4,7 @@ library(rpart)
 library(rpart.plot)
 library(smotefamily)
 # Acquires the data
-FinalDataCond_Meth <- read.delim("H:/Ergasia/significantMethPRAD.tab", row.names=1)
+FinalDataCond_Meth <- read.delim("file_path_significantMethPRAD.tab", row.names=1)
 
 # Prepares the model's parametres
 set.seed(50)
