@@ -1,6 +1,7 @@
 These files contain the code for my master thesis analysis: Machine Learning in multiomics data.
 
-Here is the abstract: 
+Here is the abstract:
+
 Prostate cancer, for men, has the highest chance of malignancy and is one of the leading causes of death. 
 In most cases it tends to grow slowly, is small in size, has low risk and limited aggressiveness. Especially 
 if confined to the prostate it is potentially curable. In modern times, there have been several attempts to 
@@ -23,4 +24,5 @@ gene signatures for each individual molecular analysis species and evaluated the
 using machine learning models. We then integrated the data into a polymorphic dataset and followed the same methodology to 
 examine the potential improvement of the predictive models.
 
+Here is the link (Greek language): https://apothesis.eap.gr/archive/item/183861
 
