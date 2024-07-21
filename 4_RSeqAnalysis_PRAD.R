@@ -1,10 +1,7 @@
 # Loads the tabs of the expression values and the patient's ids
 PRADgene <- read.table("file_path_PRADgene.tab", row.names=1)
-#names(PRADgene) <- gsub(x = names(PRADgene), pattern = "\\.", replacement = "-")
 PRADgene <- t(PRADgene)
 PRADgene <- PRADgene[!apply(PRADgene, 1, function(x) all(x == 0)), ]
-#PRADrow <- rownames(PRADgene)
-#PRADcol <- colnames(PRADgene)
 PRADgeneids <- read.delim("file_path_PRADgeneids.tab", row.names=1)
 
 # Normalize the expression matrix
