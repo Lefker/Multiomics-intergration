@@ -3,7 +3,7 @@ library(SummarizedExperiment)
 
 
 # Loads the METH data from the downloaded and saved file.
-PRADDnaMethexp <- load("K:\\METAPTYXIAKO\\Diplomatikh\\Ergasia\\PRADDnaMethexp3.rda")
+PRADDnaMethexp <- load("file_path\\PRADDnaMethexp3.rda")
 PRADDnaMethexp <- data 
 remove(data)
 
@@ -12,14 +12,14 @@ PRADMeth <- PRADDnaMethexp[rowSums(is.na(assay(PRADDnaMethexp))) == 0,]
 PRADMethProbes <- assay(PRADMeth)
 
 # Loads the Gene expression data from the downloaded and saved file.
-load(file="K:\\METAPTYXIAKO\\Diplomatikh\\Ergasia\\PRADgenexp.rda")
+load(file="file_path\\PRADgenexp.rda")
 PRADgenexp<- data 
 remove(data)
 
 PRADgene <- as.data.frame(assay(PRADgenexp))
 
 # Loads the mi-RNA data from the downloaded and saved file.
-load(file="K:\\METAPTYXIAKO\\Diplomatikh\\Ergasia\\PRADmiRNA_Seq.rda")
+load(file="file_path\\PRADmiRNA_Seq.rda")
 PRADmiRNA_Seq <- data
 remove(data)
 rownames(PRADmiRNA_Seq) <- PRADmiRNA_Seq$miRNA_ID
@@ -126,32 +126,30 @@ rm(PRADgeneidscancer,PRADgeneidsnormal,PRADMethidscancer,PRADMethidsnormal,
    PRADmiRNAidscancer,PRADmiRNAidsnormal,common_patients_cancer,
    common_patients_normal)
 
-# PRADall <- rbind(PRADgene,PRADMethProbes,PRADmiRNA_Seq)
-
 #Saves the ids in files
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADgeneids, "PRADgeneids.tab", sep = "\t", quote = FALSE)
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADMethids, "PRADMethids.tab", sep = "\t", quote = FALSE)
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADmiRNAids, "PRADmiRNAids.tab", sep = "\t", quote = FALSE)
 
-# Saves the data in files
+# Saves the data in files without normalization and standarization
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADgene, "PRADgene.tab", sep = "\t", quote = FALSE)
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADMethProbes, "PRADMethProbes.tab", sep = "\t", quote = FALSE)
 
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(PRADmiRNA_Seq, "PRADmiRNA_Seq.tab", sep = "\t", quote = FALSE)
 
 #export<-PRADall
-#setwd("H:/Ergasia")
+#setwd("file_path\\")
 #write.table(export, "PRADall.tab", sep = "\t",col.names = NA, quote = FALSE)
 
 gc()
