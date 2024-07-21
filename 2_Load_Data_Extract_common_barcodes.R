@@ -1,3 +1,6 @@
+library(SummarizedExperiment)
+library(TCGAbiolinks)
+
 # Loads the data if has been saved first in a file.
 LUADDnaMethexp <- load(file="file_path_of_meth_data.rda")
 LUADDnaMethexp <- data 
