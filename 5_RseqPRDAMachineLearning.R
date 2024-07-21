@@ -4,7 +4,7 @@ library(rpart)
 library(rpart.plot)
 library(smotefamily)
 # Acquires the data
-FinalDataCond_Rseq <- read.delim("H:/Ergasia/ssignificantRSeq.tab", row.names=1)
+FinalDataCond_Rseq <- read.delim("H:/Ergasia/significantRSeq.tab", row.names=1)
 
 # Prepares the model's parametres
 set.seed(50)
