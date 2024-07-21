@@ -57,8 +57,8 @@ Comb_data_Rseq <- as.data.frame(Comb_data_Rseq)
 
 Comb_data_Rseq <- t(Comb_data_Rseq)
 Comb_data_Rseq <- Comb_data_Rseq[order(row.names(Comb_data_Rseq),decreasing = FALSE),]
-Comb_data_Rseq_Cond <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb_data_Rseq))
+FinalDataCond_Rseq <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb_data_Rseq))
 
 # Creates a tab file
 setwd("file_path")
-write.table(Comb_data_Rseq_Cond, "ssignificantRSeq.tab", sep = "\t",col.names = NA, quote = FALSE)
+write.table(FinalDataCond_Rseq, "ssignificantRSeq.tab", sep = "\t",col.names = NA, quote = FALSE)
