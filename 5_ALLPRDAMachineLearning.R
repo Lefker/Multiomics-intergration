@@ -4,7 +4,7 @@ library(rpart)
 library(rpart.plot)
 library(smotefamily)
 # Acquires the data
-FinalDataCond_ALL <- read.delim("H:/Ergasia/significantPRADALL.tab", row.names=1)
+FinalDataCond_ALL <- read.delim("file_path//significantPRADALL.tab", row.names=1)
 
 # Prepares the model's parametres
 set.seed(50)
