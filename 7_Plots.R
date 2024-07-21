@@ -81,7 +81,7 @@ ggplot(as.data.frame(foldchange), aes(x=abs(FoldChange))) +
   ) + theme_minimal()
 
 # Gets the heatmap data
-#jpeg(file="saving_plot4.jpg",width= 3000, height = 1200)
+#jpeg(file="saving_plot.jpg",width= 3000, height = 1200)
 mp1 <-colorRampPalette(c("red","white", "green"))
 heat_data <- t(as.data.frame(lapply(FinalDataCond_miRNA[,-1], as.numeric)))
 heatmap.2(as.matrix(heat_data), col=mp1(n=10), key.xlab = paste("log2data"), 
