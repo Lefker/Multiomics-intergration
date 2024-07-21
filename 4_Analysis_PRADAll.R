@@ -89,8 +89,8 @@ Comb_data_all <- as.data.frame(Comb_data_all)
 
 Comb_data_all <- t(Comb_data_all)
 Comb_data_all <- Comb_data_all[order(row.names(Comb_data_all),decreasing = FALSE),]
-Comb_data_all_Cond <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb_data_all))
+FinalDataCond_ALL <- cbind("Condition"=PRADgeneids$condition,as.data.frame(Comb_data_all))
 
 # Creates a tab file
 setwd("file_path")
-write.table(Comb_data_all_Cond, "significantPRADALL.tab", sep = "\t", quote = FALSE)
+write.table(FinalDataCond_ALL, "significantPRADALL.tab", sep = "\t", quote = FALSE)
