@@ -3,7 +3,7 @@ library(SummarizedExperiment)
 
 
 # Loads the METH data from the downloaded and saved file.
-PRADDnaMethexp <- load("file_path\\PRADDnaMethexp3.rda")
+PRADDnaMethexp <- load("file_path\\PRADDnaMethexp.rda")
 PRADDnaMethexp <- data 
 remove(data)
 
