@@ -42,3 +42,5 @@ while their common is 493-35.
 In the Meth data table there were missing values and the corresponding probes were removed. In the remaining sets, 
 variables that had null values in all samples were removed. This reduced the Rseq dataset by 3300, Meth by 146000 
 and miRseq by 370. Therefore the embedded dataset has a size of 528x398073.
+
+Warning: Downloading and analyzing the Methylation takes a LONG time and requires a large amount of free RAM (over 16 gb)
