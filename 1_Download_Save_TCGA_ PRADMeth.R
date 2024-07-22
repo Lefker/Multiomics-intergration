@@ -20,5 +20,5 @@ GDCdownload(
 PRADDnaMethexp <- GDCprepare(
   query = query, 
   save = TRUE,
-  save.filename = "PRADDnaMethexp3.rda"
+  save.filename = "PRADDnaMethexp.rda"
 )
