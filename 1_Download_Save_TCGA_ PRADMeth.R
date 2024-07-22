@@ -1,3 +1,5 @@
+                                                ### Methylation data ###
+
 library(TCGAbiolinks)
 library(SummarizedExperiment)
 
@@ -16,7 +18,7 @@ GDCdownload(
   files.per.chunk = 100
 )
 
-# Reads the downloaded data and makes an R object
+# Reads the downloaded data and makes an SummarizedExperiment object
 PRADDnaMethexp <- GDCprepare(
   query = query, 
   save = TRUE,
